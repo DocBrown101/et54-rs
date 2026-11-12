@@ -30,6 +30,20 @@ pub struct Worker {
     join: Option<JoinHandle<()>>,
 }
 impl Worker {
+    #[cfg(test)]
+    pub(crate) fn test_channel() -> (Self, Receiver<(u64, Command)>) {
+        let (tx, rx) = mpsc::sync_channel(8);
+        (
+            Self {
+                tx,
+                state: Arc::new(Mutex::new(Snapshot::default())),
+                stop: Arc::new(AtomicBool::new(false)),
+                join: None,
+            },
+            rx,
+        )
+    }
+
     pub fn start(ctx: egui::Context) -> std::io::Result<Self> {
         Self::spawn(ctx, |path, config, stop| {
             let transport = SerialTransport::open(path, &config)?;
