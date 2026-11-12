@@ -1,0 +1,4 @@
+style_edition = "2024"  # "2015"
+newline_style = "Unix"  # "Auto"
+max_width = 160         # 100
+chain_width = 40        # 60

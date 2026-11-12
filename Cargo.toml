@@ -1,0 +1,28 @@
+[workspace]
+members = ["et54", "et54-gui"]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.95"
+license = "MIT"
+
+[workspace.dependencies]
+serialport = { version = "4.10.1", default-features = false }
+thiserror = "2"
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+wildcard_imports = "warn"
+enum_glob_use = "warn"
+redundant_clone = "warn"
+unwrap_used = "warn"
+missing_panics_doc = "warn"
+missing_safety_doc = "warn"
+undocumented_unsafe_blocks = "warn"
+
+[profile.dev]
+debug = 1

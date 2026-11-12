@@ -1,0 +1,17 @@
+[package]
+name = "et54"
+description = "Rust driver for East Tester ET54 electronic loads"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+serialport.workspace = true
+thiserror.workspace = true
+
+[target.'cfg(target_os = "linux")'.dev-dependencies]
+nix = { version = "0.31", features = ["term"] }

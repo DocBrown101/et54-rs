@@ -1,0 +1,16 @@
+[package]
+name = "et54-gui"
+description = "Native egui control and monitoring for ET54 electronic loads"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+et54 = { path = "../et54" }
+eframe = { version = "0.37", default-features = false, features = ["glow", "default_fonts", "wayland", "x11", "persistence"] }
+egui = { version = "0.37", default-features = false, features = ["monochrome_emoji_fonts"] }
+egui_plot = "0.38"
