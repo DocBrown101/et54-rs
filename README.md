@@ -6,6 +6,10 @@ Supports Linux/NixOS and Windows; the primary target is the **ET5406A+**.
 
 **Disconnecting or exiting does not switch the load off. Use INPUT OFF.**
 
+<p align="center">
+  <img src="https://github.com/DocBrown101/et54-rs/blob/main/images/main1.png" />
+</p>
+
 ## Features
 
 - **GUI:** CC/CV/CP/CR control, single-stage CC battery discharge with voltage
